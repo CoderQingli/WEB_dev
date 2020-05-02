@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My first page</title>
+</head>
+<body>
+
+<!--first-->
+<!--    <h1> header </h1>-->
+<!--    <p>fjsdlf<strong>dsfad</strong>jldsfkldsfsdfsd</p>-->
+<!--    <p>g<em>dfsaf</em>dfgdfgdfgd</p>-->
+<!--    <ol><li>red</li>-->
+<!--        <li>yellow</li>-->
+<!--        <li>blue</li></ol>-->
+<!--    <ul><li>red</li>-->
+<!--        <li>yellow</li>-->
+<!--        <li>blue</li></ul>-->
+<!--    <img src="https://ssl.gstatic.com/gb/images/spinner_32.gif".>-->
+<!--    <img src="d.jpeg".>-->
+<!--    <a href="https://www.google.com"> google</a>-->
+
+<!--second-->
+<!--<h1>first Pokemon page</h1>-->
+<!--    <table border="1">-->
+<!--        <thead>-->
+<!--            <tr>-->
+<!--                <th>Image</th>-->
+<!--                <th>Name</th>-->
+<!--                <th>Type</th>-->
+<!--                <th>Evolves Into</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--            <tr>-->
+<!--                <td><img src="http://img4.wikia.nocookie.net/__cb20140328190757/pokemon/images/thumb/2/21/001Bulbasaur.png/200px-001Bulbasaur.png".></td>-->
+<!--                <td>Bulbasaur</td>-->
+<!--                <td>Grass/Poison</td>-->
+<!--                <td><a href="http://pokemon.wikia.com/wiki/Ivysaur"> Ivysaur</a></td>-->
+<!--            </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+
+<!--third-->
+<h1>Register</h1>
+
+<form>
+    <div>
+        <label for="firstname">Firstname: </label>
+        <input name="firstname" type="text" id="firstname" placeholder="john" required>
+        <label for="lastname">Lastname: </label>
+        <input name="lastname" type="text" id="lastname" placeholder="smith" required>
+    </div>
+
+    <div>
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="other">Other</label>
+        <input type="radio" id="other" name="gender" value="other">
+    </div>
+
+    <div>
+        <label for="email">Email: </label>
+        <input name="email" type="email" id="email" placeholder="a123@abc.com" required>
+        <label for="password">Password: </label>
+        <input name="password" type="password" id="password" pattern=".{3,10}" required title="Password word between 3 and 10">
+    </div>
+
+    <div>
+        <label>
+            Birthday:
+            <select name="month">
+                <option>Month</option>
+                <option>Jan</option>
+                <option>May</option>
+            </select>
+            <select name="day">
+                <option>Day</option>
+                <option>1</option>
+                <option>2</option>
+            </select>
+            <select name="year">
+                <option>Year</option>
+                <option>1996</option>
+                <option>1997</option>
+            </select>
+        </label>
+    </div>
+
+    <div>
+        <label for="agree">I agree!</label>
+        <input type="checkbox" id="agree" required>
+    </div>
+
+    <button>Go!</button>
+</form>
+
+</body>
+</html>
