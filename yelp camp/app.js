@@ -1,6 +1,5 @@
 var express               = require("express"),
     app                   = express(),
-    partials              = require('express-partials'),
     bodyParser            = require("body-parser"),
     Campground            = require("./models/campground"),
     Comment               = require("./models/comment"),
@@ -19,10 +18,18 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes       = require("./routes/index");
 
-mongoose.connect("mongodb://localhost/yelp_camp");
+var url = process.env.DATABASE_KEY || "mongodb://localhost/yelp_camp";
+mongoose.connect(url, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log("connected to DB!");
+}).catch(err => {
+    console.log("Error: ", err.message);
+});
 
 app.set("view engine", "ejs");
-app.use(partials());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
@@ -53,6 +60,6 @@ app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campGrounds/:id/comments", commentRoutes);
 
-app.listen(3000, function () {
-    console.log("Server running on port 3000!")
+app.listen(process.env.PORT || 3000, function () {
+    console.log("Server running!");
 });
